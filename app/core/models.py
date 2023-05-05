@@ -50,9 +50,10 @@ class Caverns(models.Model):
     gimp_file_ref = models.CharField(max_length=255)
     layer = models.IntegerField()
     found = models.BooleanField(default=False, null=True, blank=True)
+    current = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.gimp_file_ref} - {self.name}"
+        return f"{self.pk}: {self.gimp_file_ref} - {self.name}"
     
 
 class Links(models.Model):
@@ -63,4 +64,4 @@ class Links(models.Model):
     found = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return f"{self.pk}: {self.name}"
