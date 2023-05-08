@@ -1,8 +1,8 @@
 server {
     listen ${LISTEN_PORT};
 
-    location /static/ {
-        alias /var/www/static/;
+    location /static {
+        alias /var/www/static;
     }
 
     location / {
