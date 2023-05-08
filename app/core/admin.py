@@ -40,7 +40,6 @@ class UserAdmin(BaseUserAdmin):
     )
 
 
-
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Caverns)
 admin.site.register(models.Links)

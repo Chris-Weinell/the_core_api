@@ -4,8 +4,14 @@ Views for the user API.
 from rest_framework import generics
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenRefreshSerializer
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.serializers import (
+    TokenObtainPairSerializer,
+    TokenRefreshSerializer
+)
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView
+)
 
 from user.serializers import UserSerializer
 

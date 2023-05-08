@@ -5,7 +5,7 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
-from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
+from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.test import APIClient
 from rest_framework import status
 
@@ -16,6 +16,7 @@ CREATE_USER_URL = reverse('user:create')
 TOKEN_OBTAIN_URL = reverse('user:token_obtain')
 TOKEN_REFRESH_URL = reverse('user:token_refresh')
 ME_URL = reverse('user:me')
+
 
 def create_user(**args):
     """Create and return a new user"""
@@ -41,7 +42,6 @@ class PublicUserApiTests(TestCase):
         user = get_user_model().objects.get(email=payload['email'])
         self.assertTrue(user.check_password(payload['password']))
         self.assertNotIn('password', res.data)
-
 
     def test_user_with_email_exists_error(self):
         """Test error returned if user with email exists."""
