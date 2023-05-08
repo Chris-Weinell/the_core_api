@@ -11,6 +11,7 @@ ENV APP_PORT=9000
 USER root
 
 RUN mkdir -p /var/www/staticfiles/ && \
+    chown nginx:nginx /var/www/staticfiles/ && \
     chmod 755 /var/www/staticfiles/ && \
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
