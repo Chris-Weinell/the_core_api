@@ -6,7 +6,7 @@ services:
       context: .
     restart: always
     volumes:
-      - static-data:/var/www/staticfiles/
+      - static-data:/var/www/static/
     env_file:
       - .env
     environment:
@@ -38,7 +38,7 @@ services:
     ports:
       - 80:8000
     volumes:
-      - static-data:/var/www/staticfiles/
+      - static-data:/var/www/static/
 
 volumes:
   postgres-data:

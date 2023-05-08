@@ -26,8 +26,8 @@ RUN python -m venv /py && \
     --disabled-password \
     --no-create-home \
     django-user && \
-    mkdir -p /var/www/staticfiles/ && \
-    chmod 755 /var/www/staticfiles/ && \
+    mkdir -p /var/www/static/ && \
+    chmod 755 /var/www/static/ && \
     chown -R django-user:django-user /var && \
     chmod -R 755 /var && \
     chmod -R +x /scripts
