@@ -12,8 +12,6 @@ USER root
 
 RUN mkdir -p /var/www/staticfiles/ && \
     chmod 755 /var/www/staticfiles/ && \
-    chown -R ec2-user:ec2-user /var && \
-    chmod -R 755 /var && \
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
