@@ -10,15 +10,13 @@ ENV APP_PORT=9000
 
 USER root
 
-RUN mkdir -p /var/www/static/ && \
-    chmod 755 /var/www/static/ && \
-    chown -R nginx:nginx /var && \
-    chmod -R 755 /var && \
+RUN mkdir -p /var/www/static && \
+    chmod 755 /var/www/static && \
     touch /etc/nginx/conf.d/default.conf && \
     chown nginx:nginx /etc/nginx/conf.d/default.conf && \
     chmod +x /run.sh
 
-VOLUME /var/www/static/
+VOLUME /var/www/static
 
 USER nginx
 
