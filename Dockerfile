@@ -28,8 +28,8 @@ RUN python -m venv /py && \
     django-user && \
     mkdir -p /var/www/staticfiles/ && \
     chmod 755 /var/www/staticfiles/ && \
-    chown -R django-user:django-user /vol && \
-    chmod -R 755 /vol && \
+    chown -R django-user:django-user /var && \
+    chmod -R 755 /var && \
     chmod -R +x /scripts
 
 ENV PATH="/scripts:/py/bin:$PATH"
