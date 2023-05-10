@@ -18,5 +18,4 @@ app_name = 'location'
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('favicon.ico', views.FaviconView.as_view()),
 ]
