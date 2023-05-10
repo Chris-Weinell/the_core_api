@@ -1,6 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include, re_path
-from django.http import HttpResponseNotFound
+from django.urls import path, include
 
 from drf_spectacular.views import (
     SpectacularAPIView,
@@ -22,9 +21,4 @@ urlpatterns = [
     ),
     path('api/user/', include('user.urls')),
     path('api/location/', include('location.urls')),
-    re_path(
-        r'^favicon\.ico$', 
-        lambda request: HttpResponseNotFound(), 
-        name='favicon'
-    ),
 ]
