@@ -13,6 +13,7 @@ from location import views
 router = DefaultRouter()
 router.register('caverns', views.CavernsViewSet)
 router.register('links', views.LinksViewSet)
+router.register('favicon', views.FaviconView)
 
 app_name = 'location'
 
