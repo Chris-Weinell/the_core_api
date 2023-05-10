@@ -36,7 +36,7 @@ services:
     depends_on:
       - app
     ports:
-      - 443:8000
+      - 80:8000
     volumes:
       - static-data:/var/www/static
 
