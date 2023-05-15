@@ -192,10 +192,10 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_SERIALIZER": "rest_framework_simplejwt.serializers.TokenRefreshSlidingSerializer",
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "https://www.thecore.social",
-    "https://thecore.social",
-    "http://127.0.0.1:5500",
-]
-# CORS_ORIGIN_ALLOW_ALL = True
-# CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS.extend(
+    filter(
+        None,
+        os.environ.get('CORS_ALLOWED_ORIGINS', '').split(','),
+    )
+)
